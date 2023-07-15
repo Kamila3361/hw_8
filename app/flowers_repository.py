@@ -15,6 +15,16 @@ class FlowersRepository:
     def __init__(self):
         self.flowers = []
 
-    # необходимые методы сюда
+    def get_all(self):
+        return self.flowers
+    
+    def get_list_flowers(self, ids: list):
+        flowers = []
+        for id in ids:
+            flowers.append(self.flowers[id - 1])
+        return flowers
 
-    # конец решения
+    def save(self, flower: Flower):
+        flower.id = len(self.flowers) + 1
+        self.flowers.append(flower)
+        return flower
