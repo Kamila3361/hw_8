@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Purcheses</title>
+    </head>
+    <body>
+        <label>List of flowers:</label>
+        {% for flower in flowers %}
+        <p>
+            {{flower.name}} --- {{flower.cost}}<br>
+        </p>
+        {% endfor %}
+    </body>
