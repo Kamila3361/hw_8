@@ -1,8 +1,8 @@
 from attrs import define
+from pydantic import BaseModel
 
 
-@define
-class Flower:
+class Flower(BaseModel):
     name: str
     count: int
     cost: int
@@ -27,4 +27,4 @@ class FlowersRepository:
     def save(self, flower: Flower):
         flower.id = len(self.flowers) + 1
         self.flowers.append(flower)
-        return flower
+        return flower.id
