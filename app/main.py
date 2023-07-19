@@ -28,9 +28,6 @@ def decode_jwt(token):
     data = jwt.decode(token, "Kamila", algorithms="HS256")
     return data
 
-@app.get("/")
-def root(request: Request):
-    return templates.TemplateResponse("index.html", {"request": request})
 
 @app.post("/signup")
 def post_signup(email: str=Form(),
