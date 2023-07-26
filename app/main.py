@@ -1,11 +1,11 @@
-from fastapi import Cookie, FastAPI, Form, Request, Response, HTTPException, Depends
+from fastapi import Cookie, FastAPI, Form, Response, HTTPException, Depends
 from fastapi.security import OAuth2PasswordBearer
 import json
 from jose import jwt
 
-from .flowers_repository import Flower, FlowersRepository, FlowerRequest, FlowerResponse
+from .flowers_repository import FlowersRepository, FlowerRequest, FlowerResponse
 # from .purchases_repository import Purchase, PurchasesRepository, SavePurchase
-from .users_repository import User, UsersRepository, UserRequest, UserResponse
+from .users_repository import UsersRepository, UserRequest, UserResponse
 
 from sqlalchemy.orm import Session
 from .database import SessionLocal, Base, engine
