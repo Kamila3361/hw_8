@@ -13,5 +13,5 @@ COPY --from=requirements-stage /tmp/requirements.txt .
 RUN pip install --no-cache-dir --upgrade -r ./requirements.txt
 COPY . .
 
-ENTRYPOINT [ "uvicorn", "--host", "0.0.0.0", "app.main:app" ]
+ENTRYPOINT [ "sh", "./scripts/launch.sh" ]
 
